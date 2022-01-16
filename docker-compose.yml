@@ -39,11 +39,12 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
+    user: ${CURRENT_UID}
     volumes:
       # to be modified depending on your needs
-      - /path/to/your/grafana/data:/var/lib/grafana
-      - /path/to/your/grafana/grafana.ini:/etc/grafana/grafana.ini
-      - /path/to/your/grafana/provisioning:/etc/grafana/provisioning
+      - /home/pirate/Docker-Raspberry-PI-Monitoring/grafana/data:/var/lib/grafana
+     # - /path/to/your/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - /home/pirate/Docker-Raspberry-PI-Monitoring/grafana/provisioning:/etc/grafana/provisioning
 
   node-exporter:
     container_name: monitoring-node-exporter
@@ -69,8 +70,8 @@ services:
     restart: unless-stopped
     volumes:
       # to be modified depending on your needs
-      - /path/to/your/prometheus/data:/prometheus
-      - /path/to/your/prometheus/config:/etc/prometheus/
+      #- /home/pirate/Docker-Raspberry-PI-Monitoring/prometheus-data:/prometheus
+      - /home/pirate/Docker-Raspberry-PI-Monitoring/prometheus:/etc/prometheus/
     links:
       - cadvisor:cadvisor
       - node-exporter:node-exporter
