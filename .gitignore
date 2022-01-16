@@ -1,0 +1,9 @@
+grafana/data/alerting
+grafana/data/plugins
+grafana/data/png
+grafana/data/csv
+grafana/data/alerting
+grafana.db
+grafana/provisioning/plugins
+grafana/provisioning/notifiers
+grafana/provisioning/access-control
